@@ -50,7 +50,28 @@ class App extends Component {
             <SignIn alert={this.alert} setUser={this.setUser} />
           )} />
           <Route exact path='/' render={() => (
-            <Articles alert={this.alert} setUser={this.setUser} />
+            <Articles alert={this.alert} articleType='top-headlines?' country='us' setUser={this.setUser} />
+          )} />
+          <Route exact path='/austrailia' render={() => (
+            <Articles alert={this.alert} articleType='top-headlines?' country='au' setUser={this.setUser} />
+          )} />
+          <Route exact path='/canada' render={() => (
+            <Articles alert={this.alert} articleType='top-headlines?' country='ca' setUser={this.setUser} />
+          )} />
+          <Route exact path='/france' render={() => (
+            <Articles alert={this.alert} articleType='top-headlines?' country='fr' setUser={this.setUser} />
+          )} />
+          <Route exact path='/germany' render={() => (
+            <Articles alert={this.alert} articleType='top-headlines?' country='de' setUser={this.setUser} />
+          )} />
+          <Route exact path='/hongkong' render={() => (
+            <Articles alert={this.alert} articleType='top-headlines?' country='hk' setUser={this.setUser} />
+          )} />
+          <Route exact path='/uk' render={() => (
+            <Articles alert={this.alert} articleType='top-headlines?' country='gb' setUser={this.setUser} />
+          )} />
+          <Route exact path='/us-business' render={() => (
+            <Articles alert={this.alert} articleType='top-headlines?' country='us' setUser={this.setUser} />
           )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut alert={this.alert} clearUser={this.clearUser} user={user} />

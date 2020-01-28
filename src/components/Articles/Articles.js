@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
+import apiKey from '../../apiKey'
 // import Button from 'react-bootstrap/Button'
 // import { Link } from 'react-router-dom'
 
@@ -9,7 +10,7 @@ const Articles = props => {
 
   useEffect(() => {
     axios({
-      url: apiUrl,
+      url: apiUrl + props.articleType + 'country=' + props.country + apiKey,
       method: 'GET'
     })
       .then(res =>
