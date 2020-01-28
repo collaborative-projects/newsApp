@@ -4,26 +4,34 @@ import apiUrl from '../../apiConfig'
 // import Button from 'react-bootstrap/Button'
 
 const Articles = props => {
-  const [articles, seArticles] = useState([])
+  const [articles, setArticles] = useState([])
 
   useEffect(() => {
     axios({
       url: apiUrl,
       method: 'GET'
     })
-      .then(res => seArticles(res.data.articles))
-      .then(() => props.alert({ heading: 'Success', message: 'You got articles!', variant: 'success' }))
+      .then(res =>
+        setArticles(res.data.articles)
+      )
+      .then(() =>
+        props.alert({ heading: 'Success', message: 'You got articles!', variant: 'success' })
+      )
       .catch(() => props.alert({ heading: 'Unable to retrieve articles.', message: 'Sorry this isn\'t working', variant: 'success' }))
   }, [])
 
   const articlesJsx = articles.map(article => (
-    <li key={article._id} className="list-group-item">
+    <li key={article.title} className="list-group-item text-center">
+      <h3>
+        <img src={article.urlToImage} width="500rem" />
+      </h3>
       {article.title}
     </li>
   ))
 
   return (
     <div>
+      {console.log(articles)}
       {articlesJsx}
     </div>
   )
