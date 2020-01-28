@@ -2,7 +2,7 @@ import React, { useEffect, useState, Fragment } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 // import Button from 'react-bootstrap/Button'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const Articles = props => {
   const [articles, setArticles] = useState([])
@@ -23,16 +23,16 @@ const Articles = props => {
 
   const articlesJsx = articles.map(article => (
     <Fragment key={article.title}>
-      <Link to="/">
+      <a target="blank" href={article.url}>
         <li className="list-group-item text-center">
           <h3>
             <img src={article.urlToImage} width="500rem" />
           </h3>
           {article.title}
         </li>
-      </Link>
+      </a>
       <p>
-        {article.content}
+        {article.description}
       </p>
     </Fragment>
   ))
