@@ -24,27 +24,27 @@ const Articles = props => {
 
   const articleBox = {
     border: '1px solid black',
+    padding: '3rem',
     textAlign: 'center'
   }
 
   const articlesJsx = articles.map(article => (
     <div style={articleBox} key={article.title}>
       <a target="blank" href={article.url}>
-        <div className="text-center" style={{ fontSize: '24px', color: 'neon pink' }}>
+        <div className="text-center" style={{ fontSize: '24px', color: 'neon pink', marginBottom: '1rem' }}>
           {article.title}
+          <img src={article.urlToImage} style={{ display: 'block', width: '100%', maxWidth: '100%' }}/>
         </div>
-        <img src={article.urlToImage} width="500rem"/>
       </a>
-      <p style={{ textAlign: 'center' }}>
+      <p style={{ textAlign: 'center', marginTop: '1rem' }}>
         {article.description}
       </p>
     </div>
   ))
 
   return (
-    <div>
-      {console.log(articles)}
-      {articlesJsx}
+    <div style={{ width: '75%', margin: 'auto' }}>
+      {articlesJsx[0]}
     </div>
   )
 }
