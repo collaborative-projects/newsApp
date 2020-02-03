@@ -53,6 +53,10 @@ const logoStyle = {
   fontSize: '5rem'
 }
 
+const centerNavBar = {
+  justifyContent: 'center'
+}
+
 const Header = ({ user }) => (
   <Fragment>
     <div style={headerStyle} className="text-center">
@@ -62,7 +66,7 @@ const Header = ({ user }) => (
     </div>
     <Navbar bg="primary" variant="dark" expand="md">
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Collapse style={centerNavBar} id="basic-navbar-nav">
         <Nav>
           { user && <span className="navbar-text mr-2">Welcome, {user.email}</span>}
           { alwaysOptions }

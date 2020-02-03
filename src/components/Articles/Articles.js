@@ -1,8 +1,8 @@
-import React, { useEffect, useState, Fragment } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import apiKey from '../../apiKey'
-// import Button from 'react-bootstrap/Button'
+// import { Row, Col, Container } from 'react-bootstrap/Button'
 // import { Link } from 'react-router-dom'
 
 const Articles = props => {
@@ -22,20 +22,23 @@ const Articles = props => {
       .catch(() => props.alert({ heading: 'Unable to retrieve articles.', message: 'Sorry this isn\'t working', variant: 'success' }))
   }, [])
 
+  const articleBox = {
+    border: '1px solid black',
+    textAlign: 'center'
+  }
+
   const articlesJsx = articles.map(article => (
-    <Fragment key={article.title}>
+    <div style={articleBox} key={article.title}>
       <a target="blank" href={article.url}>
-        <li className="list-group-item text-center">
-          <h3>
-            <img src={article.urlToImage} width="500rem" />
-          </h3>
+        <div className="text-center" style={{ fontSize: '24px', color: 'neon pink' }}>
           {article.title}
-        </li>
+        </div>
+        <img src={article.urlToImage} width="500rem"/>
       </a>
-      <p>
+      <p style={{ textAlign: 'center' }}>
         {article.description}
       </p>
-    </Fragment>
+    </div>
   ))
 
   return (
