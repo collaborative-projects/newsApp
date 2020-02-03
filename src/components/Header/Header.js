@@ -36,7 +36,6 @@ const alwaysOptions = (
     </Dropdown>
     <Nav.Link href="#/us-business">Business</Nav.Link>
     <Nav.Link href="#/us-entertainment">Entertainment</Nav.Link>
-    <Nav.Link href="#/us-general">General</Nav.Link>
     <Nav.Link href="#/us-health">Health</Nav.Link>
     <Nav.Link href="#/us-science">Science</Nav.Link>
     <Nav.Link href="#/us-sports">Sports</Nav.Link>

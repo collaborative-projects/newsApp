@@ -10,7 +10,7 @@ const Articles = props => {
 
   useEffect(() => {
     axios({
-      url: apiUrl + props.articleType + 'country=' + props.country + apiKey,
+      url: apiUrl + props.articleType + 'country=' + props.country + '&category=' + props.category + apiKey,
       method: 'GET'
     })
       .then(res =>

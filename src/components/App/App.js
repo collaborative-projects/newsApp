@@ -50,28 +50,43 @@ class App extends Component {
             <SignIn alert={this.alert} setUser={this.setUser} />
           )} />
           <Route exact path='/' render={() => (
-            <Articles alert={this.alert} articleType='top-headlines?' country='us' setUser={this.setUser} />
+            <Articles alert={this.alert} articleType='top-headlines?' category="general" country='us' setUser={this.setUser} />
           )} />
           <Route exact path='/austrailia' render={() => (
-            <Articles alert={this.alert} articleType='top-headlines?' country='au' setUser={this.setUser} />
+            <Articles alert={this.alert} articleType='top-headlines?' category="general" country='au' setUser={this.setUser} />
           )} />
           <Route exact path='/canada' render={() => (
-            <Articles alert={this.alert} articleType='top-headlines?' country='ca' setUser={this.setUser} />
+            <Articles alert={this.alert} articleType='top-headlines?' category="general" country='ca' setUser={this.setUser} />
           )} />
           <Route exact path='/france' render={() => (
-            <Articles alert={this.alert} articleType='top-headlines?' country='fr' setUser={this.setUser} />
+            <Articles alert={this.alert} articleType='top-headlines?' category="general" country='fr' setUser={this.setUser} />
           )} />
           <Route exact path='/germany' render={() => (
-            <Articles alert={this.alert} articleType='top-headlines?' country='de' setUser={this.setUser} />
+            <Articles alert={this.alert} articleType='top-headlines?' category="general" country='de' setUser={this.setUser} />
           )} />
           <Route exact path='/hongkong' render={() => (
-            <Articles alert={this.alert} articleType='top-headlines?' country='hk' setUser={this.setUser} />
+            <Articles alert={this.alert} articleType='top-headlines?' category="general" country='hk' setUser={this.setUser} />
           )} />
           <Route exact path='/uk' render={() => (
-            <Articles alert={this.alert} articleType='top-headlines?' country='gb' setUser={this.setUser} />
+            <Articles alert={this.alert} articleType='top-headlines?' category="general" country='gb' setUser={this.setUser} />
           )} />
           <Route exact path='/us-business' render={() => (
-            <Articles alert={this.alert} articleType='top-headlines?' country='us' setUser={this.setUser} />
+            <Articles alert={this.alert} articleType='top-headlines?' category="business" country='us' setUser={this.setUser} />
+          )} />
+          <Route exact path='/us-entertainment' render={() => (
+            <Articles alert={this.alert} articleType='top-headlines?' category="entertainment" country='us' setUser={this.setUser} />
+          )} />
+          <Route exact path='/us-health' render={() => (
+            <Articles alert={this.alert} articleType='top-headlines?' category="health" country='us' setUser={this.setUser} />
+          )} />
+          <Route exact path='/us-science' render={() => (
+            <Articles alert={this.alert} articleType='top-headlines?' category="science" country='us' setUser={this.setUser} />
+          )} />
+          <Route exact path='/us-sports' render={() => (
+            <Articles alert={this.alert} articleType='top-headlines?' category="sports" country='us' setUser={this.setUser} />
+          )} />
+          <Route exact path='/us-technology' render={() => (
+            <Articles alert={this.alert} articleType='top-headlines?' category="technology" country='us' setUser={this.setUser} />
           )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut alert={this.alert} clearUser={this.clearUser} user={user} />
